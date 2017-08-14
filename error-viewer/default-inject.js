@@ -27,6 +27,9 @@ const scriptFn = () => {
     flashRed();
     return originalConsoleError(...args);
   };
+
+  window.addEventListener('error', flashRed);
+  window.addEventListener('unhandledrejection', flashRed);
 };
 
 const scriptTag = document.createElement('script');
